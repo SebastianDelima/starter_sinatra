@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+     <head>
+      
+         <title>Item</title>
+        
+     </head>
+     <body>
+        <h1> <%= @item.name  %></h1>
+
+        <form action='/items/<%= @item.id%>' method='POST'>
+        <input type= 'hidden' value='DELETE' name='_method'>
+        <input type='submit' value='Delete Item'>
+        </form>
+
+      
+     </body>
+ </html>

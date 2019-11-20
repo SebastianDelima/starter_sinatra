@@ -6,4 +6,6 @@ class OrdersController < Sinatra::Base
         @orders = Order.all
         erb :'/orders/index'
     end
+
+
 end

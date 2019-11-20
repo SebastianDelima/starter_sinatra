@@ -2,6 +2,7 @@
 class CustomersController < Sinatra::Base
     
     set :views, "app/views/customers"
+    set :method_override, true
 
     get '/customers' do
         @customers = Customer.all 
@@ -13,18 +14,16 @@ class CustomersController < Sinatra::Base
     end
 
     get '/customers/:id' do
-        @customers = Customer.find(params[:id])
+        @customer = Customer.find(params[:id])
         erb :show
     end
 
     get '/customers/:id/edit' do
-        @customers = Customer.find(params[:id])
+        @customer = Customer.find(params[:id])
         erb :edit
     end
 
-    get '/customers/delete' do
-        erb :delete
-    end
+    
 
     patch '/customers/:id' do
         customer_name = params[:customer_name]
@@ -37,6 +36,12 @@ class CustomersController < Sinatra::Base
         name = params[:name]
         Customer.create(name: name)
         redirect "/customers"
+    end
+
+    delete '/customers/:id' do 
+      @customer = Customer.find(params[:id])
+      @customer.delete
+        redirect '/customers'
     end
 
     

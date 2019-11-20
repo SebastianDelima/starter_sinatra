@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+
+    <head>
+      
+        <title>Index for items</title>
+       
+    </head>
+    <body>
+      <div>
+      <ol>
+        <% @items.each do |item| %>
+      <li> <a href= "/items/<%= item.id %>"><%= item.name %></a></li>
+       <% end %>
+        <ol>
+          
+      </div>
+    </body>
+    </html>

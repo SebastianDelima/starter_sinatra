@@ -6,6 +6,11 @@
         
      </head>
      <body>
-        <h1> <%= @customers.name  %></h1>
+        <h1> <%= @customer.name  %></h1>
+
+         <form action='/customers/<%= @customer.id%>' method="POST">
+        <input type="hidden" name="_method" value = "delete">
+        <input type="submit" value="Delete">
+            </form>
      </body>
  </html>
