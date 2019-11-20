@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+
+     <head>
+      
+         <title>Index of Customers</title>
+        
+     </head>
+     <body>
+        <div>
+            <ol>
+                <%@customers.each do |customer|%>
+                <li>
+                <a href= "/customers/<%= customer.id %>"><%= customer.name %></a>
+                </li>
+                <% end %>
+            </ol>
+        </div>
+     </body>
+ </html>

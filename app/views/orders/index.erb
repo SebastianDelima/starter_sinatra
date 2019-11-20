@@ -1,0 +1,21 @@
+
+
+
+<!DOCTYPE html>
+
+    <head>
+      
+        <title>Index for orders</title>
+       
+    </head>
+    <body>
+      <div>
+      <ol>
+        <% @orders.each do |order| %>
+       <li> <%= order.customer_id %> </li>
+       <% end %>
+        <ol>
+          
+      </div>
+    </body>
+    </html>

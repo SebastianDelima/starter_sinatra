@@ -1,0 +1,18 @@
+ <!DOCTYPE html>
+
+     <head>
+      
+         <title>Index of Customers</title>
+        
+     </head>
+     <body>
+        <div>
+            <form action='/customers/<%=@customers.id%>' method="POST">
+            <input type="hidden" name="_method" value="PATCH">
+            <label for="customer">Customer</label>
+            <input type="text" name="customer_name" value="<%= @customers.name %>">
+            <input type="submit" value="Edit Customer">
+        </div>
+     </body>
+ </html>
+
